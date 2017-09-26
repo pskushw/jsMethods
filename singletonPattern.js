@@ -21,5 +21,5 @@ var singleton = (function(){
 var instance1 = singleton.getInstance();
 var instance2 = singleton.getInstance();
 if(instance1 === instance2){
-  console.log("its singleton");
+  console.log("it is singleton"); //its singleton
 }
