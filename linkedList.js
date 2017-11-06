@@ -65,11 +65,11 @@ LinkedList.prototype.reverseByIterate = function() {
   var  next = null;
   var  prev = null;
   var cur = this.head;
-	while(cur){
-		next = cur.next;
-		cur.next = prev;
-		prev = cur;
-		cur = next;
+  while(cur){
+     next = cur.next;
+     cur.next = prev;
+     prev = cur;
+     cur = next;
   }
   this.head = prev;
 }
