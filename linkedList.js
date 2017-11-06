@@ -60,6 +60,19 @@ linkedList.prototype.delete = function(key){
   }
    prev.next = temp.next;
 }
+/** refer http://algorithms.tutorialhorizon.com/reverse-a-linked-list/ **/
+LinkedList.prototype.reverseByIterate = function() {
+  var  next = null;
+  var  prev = null;
+  var cur = this.head;
+	while(cur){
+		next = cur.next;
+		cur.next = prev;
+		prev = cur;
+		cur = next;
+  }
+  this.head = prev;
+}
 
 var list = new linkedList();
 var node1 = new node(1);
