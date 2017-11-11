@@ -1,23 +1,23 @@
 /* sort array which contains only boolean values */
-function sortbooleanArray(a) {
+function sortbooleanArray(ary) {
   var x = 0;
-  var y = a.length-1;
-  while(x != y) {
-    if(a[x] === 0) {
+  var y = ary.length - 1;
+  while(x != y){
+    if(ary[x] === 0){
       x++;
     }
-    if(a[x] === 1 && a[y] === 1){
-      y--;
-    }
-    if(a[x] === 1 && a[y] === 0){
-      var t = a[x];
-      a[x] = a[y];
-      a[y] = t;
-      x++;
+    if(ary[x] === 1){
+      if(ary[y]  === 1){
+        y--;
+      }else if(ary[y] === 0){
+        var temp = ary[y];
+        ary[y] = ary[x];
+        ary[x] = temp;
+        x++;
+      }
     }
   }
-  
-  return a;
+  return ary;
 }
 
 console.log(sortbooleanArray([0,0,1,0,1,1,0,1,0,1,1,0]));
